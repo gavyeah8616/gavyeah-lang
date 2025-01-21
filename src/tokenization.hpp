@@ -4,7 +4,7 @@
 #include <vector>
 
 enum class TokenType {
-    exit,
+    _return,
     int_lit,
     semi,
     open_paren,
@@ -19,15 +19,15 @@ enum class TokenType {
     open_curly,
     close_curly,
     if_,
-    elif,
+    elsif,
     else_,
 };
 
 inline std::string to_string(const TokenType type)
 {
     switch (type) {
-    case TokenType::exit:
-        return "`exit`";
+    case TokenType::_return:
+        return "`ret`";
     case TokenType::int_lit:
         return "int literal";
     case TokenType::semi:
@@ -56,8 +56,8 @@ inline std::string to_string(const TokenType type)
         return "`}`";
     case TokenType::if_:
         return "`if`";
-    case TokenType::elif:
-        return "`elif`";
+    case TokenType::elsif:
+        return "`elsif`";
     case TokenType::else_:
         return "`else`";
     }
@@ -102,8 +102,8 @@ public:
                 while (peek().has_value() && std::isalnum(peek().value())) {
                     buf.push_back(consume());
                 }
-                if (buf == "exit") {
-                    tokens.push_back({ TokenType::exit, line_count });
+                if (buf == "ret") {
+                    tokens.push_back({ TokenType::_return, line_count });
                     buf.clear();
                 }
                 else if (buf == "let") {
@@ -114,8 +114,8 @@ public:
                     tokens.push_back({ TokenType::if_, line_count });
                     buf.clear();
                 }
-                else if (buf == "elif") {
-                    tokens.push_back({ TokenType::elif, line_count });
+                else if (buf == "elsif") {
+                    tokens.push_back({ TokenType::elsif, line_count });
                     buf.clear();
                 }
                 else if (buf == "else") {
@@ -198,7 +198,7 @@ public:
                 consume();
                 tokens.push_back({ TokenType::close_curly, line_count });
             }
-            else if (peek().value() == '\n') {
+            else if (peek().value() == '\nl') {
                 consume();
                 line_count++;
             }
@@ -206,7 +206,7 @@ public:
                 consume();
             }
             else {
-                std::cerr << "Invalid token" << std::endl;
+                std::cerr << "Error: Invalid token" << std::endl;
                 exit(EXIT_FAILURE);
             }
         }
