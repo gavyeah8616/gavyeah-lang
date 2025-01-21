@@ -9,8 +9,8 @@
 int main(int argc, char* argv[])
 {
     if (argc != 2) {
-        std::cerr << "Incorrect usage. Correct usage is..." << std::endl;
-        std::cerr << "hydro <input.hy>" << std::endl;
+        std::cerr << "Error: Incorrect usage" << std::endl;
+        std::cerr << "Message: use ./gavyeahlang (or ./build/gavyeahlang) <input.hy>" << std::endl;
         return EXIT_FAILURE;
     }
 
@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
     std::optional<NodeProg> prog = parser.parse_prog();
 
     if (!prog.has_value()) {
-        std::cerr << "Invalid program" << std::endl;
+        std::cerr << "Error: Invalid program" << std::endl;
         exit(EXIT_FAILURE);
     }
 
