@@ -112,7 +112,7 @@ public:
 
     void error_expected(const std::string& msg) const
     {
-        std::cerr << "[Parse Error] Expected " << msg << " on line " << peek(-1).value().line << std::endl;
+        std::cerr << "Error: Expected " << msg << " on line " << peek(-1).value().line << std::endl;
         exit(EXIT_FAILURE);
     }
 
