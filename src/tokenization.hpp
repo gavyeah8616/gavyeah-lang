@@ -198,7 +198,7 @@ public:
                 consume();
                 tokens.push_back({ TokenType::close_curly, line_count });
             }
-            else if (peek().value() == '\nl') {
+            else if (peek().value() == '\n') {
                 consume();
                 line_count++;
             }
