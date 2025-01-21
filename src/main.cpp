@@ -43,4 +43,9 @@ int main(int argc, char* argv[])
     system("ld -o out out.o");
 
     return EXIT_SUCCESS;
+
+    if (EXIT_SUCCESS)
+    {
+        std::cout << "Compiled!" << std::endl;
+    }
 }
