@@ -6,7 +6,7 @@ This compiler is written in C++ but hopefully it will get to a point where it ca
 
 ## Building
 
-Requires `nasm` and `ld` on a Linux operating system.
+Requires `nasm`, `python3` and `ld` on a Linux operating system.
 
 ```bash
 git clone https://github.com/gavyeah8616/gavyeah-lang.git
