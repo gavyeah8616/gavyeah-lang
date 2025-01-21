@@ -212,7 +212,7 @@ public:
 
     std::optional<NodeIfPred*> parse_if_pred() // NOLINT(*-no-recursion)
     {
-        if (try_consume(TokenType::elif)) {
+        if (try_consume(TokenType::elsif)) {
             try_consume_err(TokenType::open_paren);
             const auto elif = m_allocator.alloc<NodeIfPredElif>();
             if (const auto expr = parse_expr()) {
@@ -248,7 +248,7 @@ public:
 
     std::optional<NodeStmt*> parse_stmt() // NOLINT(*-no-recursion)
     {
-        if (peek().has_value() && peek().value().type == TokenType::exit && peek(1).has_value()
+        if (peek().has_value() && peek().value().type == TokenType::_return && peek(1).has_value()
             && peek(1).value().type == TokenType::open_paren) {
             consume();
             consume();
