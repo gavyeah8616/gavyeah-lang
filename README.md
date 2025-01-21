@@ -1,7 +1,6 @@
-# Hydrogen Lang (CPP Compiler)
+# gavyeah-lang
 
-Hydrogen is a Hobby programming language. It is called Hydrogen because it is simple, lightweight, and will catch on
-fire if handled improperly🔥
+gavyeah lang is my own lang 
 
 This compiler is written in C++ but hopefully it will get to a point where it can be self-hosted.
 
@@ -10,20 +9,14 @@ This compiler is written in C++ but hopefully it will get to a point where it ca
 Requires `nasm` and `ld` on a Linux operating system.
 
 ```bash
-git clone https://github.com/orosmatthew/hydrogen-cpp
-cd hydrogen-cpp
+git clone https://github.com/gavyeah8616/gavyeah-lang.git
+cd gavyeah-lang-master
 mkdir build
 cmake -S . -B build
 cmake --build build
 ```
 
-Executable will be `hydro` in the `build/` directory.
+Executable will be `gavyeahlang` in the `build/` directory.
 
-## Contributing
-
-I am not accepting pull requests for now to better keep in sync with the accompanying video series. Possibly in the future.
-
-## Watch the Development
-
-YouTube video
-series "[Creating a Compiler](https://www.youtube.com/playlist?list=PLUDlas_Zy_qC7c5tCgTMYq2idyyT241qs)" by Pixeled
+#how to use
+to use it just run `gavyeahlang <input.gyl>`
