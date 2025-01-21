@@ -35,12 +35,14 @@ int main(int argc, char* argv[])
 
     {
         Generator generator(prog.value());
-        std::fstream file("out.asm", std::ios::out);
+        std::string output_filename = std::string(argv[1]) + ".asm";
+        std::fstream file(output_filename, std::ios::out);
         file << generator.gen_prog();
     }
 
-    system("nasm -felf64 out.asm");
-    system("ld -o out out.o");
+    system("python3 ./src/main.py ./test.gyl");
+    std::string command = "ld -o " + std::string(argv[1]) + ".exe test.gyl.o";
+    system(command.c_str());
 
     return EXIT_SUCCESS;
 }
