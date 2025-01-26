@@ -40,9 +40,9 @@ int main(int argc, char* argv[])
         file << generator.gen_prog();
     }
 
-    system("python3 ./src/main.py ./test.gyl");
-    std::string command = "ld -o " + std::string(argv[1]) + ".exe test.gyl.o";
+    std::string py_command = "python3 ./src/main.py " + std::string(argv[1]);
+    system(py_command.c_str());
+    std::string command = "ld -o " + std::string(argv[1]) + ".exe " + std::string(argv[1]) + ".o";
     system(command.c_str());
-
     return EXIT_SUCCESS;
 }
