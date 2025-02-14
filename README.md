@@ -26,3 +26,6 @@ to test your program just run
 echo $?
 ```
 
+#WARING
+if you are putting your file in another folder then you NEED to create a folder called src and copy and paste main.py into src
+
