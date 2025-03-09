@@ -6,7 +6,7 @@ This compiler is written in C++ and python but hopefully it will get to a point 
 
 ## Building
 
-Requires `nasm`, `python3` and `ld` on a unix like os such as linux macos but you can use wsl.
+Requires `nasm`, `python3` and `ld` on a unix like os such as linux, macos but you can use wsl.
 
 ```bash
 git clone https://github.com/gavyeah8616/gavyeah-lang.git
