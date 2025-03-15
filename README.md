@@ -18,7 +18,7 @@ cmake --build build
 
 Executable will be `gavyeahlang` in the `build/` directory.
 
-#how to use
+# how to use
 to use it just run `gavyeahlang <input.gyl>`.
 to test your program just run 
 ```bash
@@ -26,6 +26,6 @@ to test your program just run
 echo $?
 ```
 
-#WARING
+# WARING
 if you are putting your file in another folder then you NEED to create a folder called src and copy and paste main.py into src
 
