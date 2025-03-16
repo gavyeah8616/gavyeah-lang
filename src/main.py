@@ -1,6 +1,8 @@
 import sys
 import os
 
+# edit this to your liking just don't mess with the os.system nasm thing
+
 EXIT_FAILURE = 1
 EXIT_SUCCESS = 0
 
